@@ -461,52 +461,7 @@
       </ol>
     </div>
 
-    <div class="btn-group">
-      <button class="btn btn-primary" onclick="goStep(2)">Começar Configuração →</button>
-      <a href="https://supabase.com/dashboard" target="_blank" class="btn btn-ghost" style="text-decoration:none">Abrir Supabase ↗</a>
-    </div>
-  </div>
 
-  <!-- ===== STEP 2: Credentials ===== -->
-  <div id="panel-2" class="panel" style="display:none">
-    <div class="panel-title">🔑 Credenciais do Supabase</div>
-    <div class="panel-sub">Informe os dados do seu projeto. Você encontra essas informações em <strong style="color:#94a3b8">Settings → API</strong> no painel do Supabase.</div>
-
-    <div class="info-card">
-      <strong>Como obter as credenciais:</strong>
-      <ol>
-        <li>Acesse <strong>app.supabase.com</strong> e abra seu projeto</li>
-        <li>No menu lateral, vá em <strong>Settings → API</strong></li>
-        <li>Copie a <strong>Project URL</strong> e a chave <strong>anon public</strong></li>
-      </ol>
-    </div>
-
-    <div class="field">
-      <label class="field-label">Project URL</label>
-      <input type="url" id="inp-url" placeholder="https://xyzabc123.supabase.co" autocomplete="off"/>
-      <div class="hint">Formato: https://[id-do-projeto].supabase.co</div>
-    </div>
-
-    <div class="field">
-      <label class="field-label">Anon Public Key</label>
-      <input type="password" id="inp-key" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." autocomplete="off"/>
-      <div class="hint">Chave pública JWT — segura para uso no front-end</div>
-    </div>
-
-    <div class="field">
-      <label class="field-label">Nome do Projeto (opcional)</label>
-      <input type="text" id="inp-name" placeholder="Meu ResearchOps" value="ResearchOps"/>
-    </div>
-
-    <div id="val-result" style="display:none; margin-top:1rem"></div>
-
-    <div class="btn-group">
-      <button class="btn btn-primary" id="btn-validate" onclick="validateCredentials()">
-        Validar e Continuar →
-      </button>
-      <button class="btn btn-ghost" onclick="goStep(1)">← Voltar</button>
-    </div>
-  </div>
 
   <!-- ===== STEP 3: Schema SQL ===== -->
   <div id="panel-3" class="panel" style="display:none">
@@ -519,29 +474,7 @@
     </div>
 
     <!-- AUTO METHOD -->
-    <div id="method-auto">
-      <div class="info-card">
-        <strong>Execução automática via Anthropic + Supabase MCP.</strong><br/>
-        O wizard vai conectar ao Supabase e executar o schema automaticamente.
-        Para isso, informe sua <strong>Service Role Key</strong> (Settings → API → service_role secret).
-      </div>
-
-      <div class="field">
-        <label class="field-label">Service Role Key (secret)</label>
-        <input type="password" id="inp-service-key" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." autocomplete="off"/>
-        <div class="hint">⚠️ Nunca exponha esta chave no front-end do app. Usada somente aqui para setup.</div>
-      </div>
-
-      <div id="schema-exec-log" style="display:none" class="console-wrap"></div>
-
-      <div class="btn-group">
-        <button class="btn btn-primary" id="btn-exec-schema" onclick="executeSchemaAuto()">
-          ⚡ Executar Schema Automaticamente
-        </button>
-        <button class="btn btn-ghost" onclick="goStep(2)">← Voltar</button>
-      </div>
-    </div>
-
+    
     <!-- MANUAL METHOD -->
     <div id="method-manual" style="display:none">
       <div class="info-card">
